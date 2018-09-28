@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace lab6
 {
-    class Program
+    interface  IPlant
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        void Grow();
+         
     }
 }
