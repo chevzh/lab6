@@ -10,7 +10,7 @@ namespace lab6
     {
         public bool CanEat { get; set; }
 
-        public Cactus(string name = "Cactus", string color = "Green", bool canEat= false):base(name,color)
+        public Cactus(string name = "Cactus", string color = "Green", int price = 0, bool canEat= false):base(name,color,price)
         {
             CanEat = CanEat;
         }

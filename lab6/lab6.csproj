@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bouqet.cs" />
+    <Compile Include="BouqetController.cs" />
     <Compile Include="Bush.cs" />
     <Compile Include="Cactus.cs" />
     <Compile Include="Flower.cs" />

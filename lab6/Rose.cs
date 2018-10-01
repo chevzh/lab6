@@ -11,7 +11,7 @@ namespace lab6
         public bool HasSpikes { get; set; } = true;
 
 
-        public Rose(string name = "Rose", string color = "Red", bool hasSpikes = true) : base(name, color)
+        public Rose(string name = "Rose", string color = "Red", int price = 0, bool hasSpikes = true) : base(name, color,price)
         {
             HasSpikes = hasSpikes;
         }

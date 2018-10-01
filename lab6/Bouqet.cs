@@ -11,11 +11,7 @@ namespace lab6
     {
         protected List<Flower> _flowers;
 
-        public virtual void Add(Flower flower)
-        {
-            _flowers.Add(flower);
-        }
-
+       
         public Bouqet(IEnumerable<Flower> flowers)
         {
             _flowers = new List<Flower>(flowers);
@@ -36,10 +32,24 @@ namespace lab6
             return _flowers.GetEnumerator();
         }
 
+        public virtual void Add(Flower flower)
+        {
+            _flowers.Add(flower);
+        }
+
         public override string ToString()
         {
             return string.Join("\n---------------\n" , this);
         }
 
+        public void Sort()
+        {
+            _flowers.Sort();
+        }
+
+        public void Remove(Flower flower)
+        {
+            _flowers.Remove(flower);
+        }
     }
 }

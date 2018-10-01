@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab6
 {
-    abstract class Flower : IPlant
+    abstract class Flower : IPlant, IComparable<Flower>
     {
 
         public virtual void Grow()
@@ -16,22 +16,33 @@ namespace lab6
         
         public string Color { get; set; }
         public string Name { get; set; }
+        public int Price { get; set; }
 
 
-        public Flower(string name = "", string color = "")
+        public Flower(string name = "", string color = "", int price = 0)
         {
             Name = name;
             Color = color;
+            Price = price;
         }
 
         public override string ToString()
         {
-            return String.Format("Тип объекта: {0}\nИмя: {1}\nЦвет: {2}", base.ToString(), Name, Color);
+            return String.Format("Тип объекта: {0}\nИмя: {1}\nЦвет: {2}\nЦена: {3}", base.ToString(), Name, Color,Price);
         }
 
         public virtual void Bloom()
         {
             Console.WriteLine("Bloom");
+        }
+
+        public int CompareTo(Flower other)
+        {
+            Flower f = other as Flower;
+            if (f != null)
+                return this.Name.CompareTo(f.Name);
+            else
+                throw new Exception("Невозможно сравнить два объекта");
         }
     }
 }
